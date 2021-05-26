@@ -29,7 +29,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <p style={{ marginLeft: 30 }}>THE INVESTMENT GURUS</p>
+            <p style={{ marginLeft: 30 }}>INVESTMENTGURU</p>
             <i class="fab fa-typo3" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -70,7 +70,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+          {button && <Button buttonStyle="btn--outline" >Sign up</Button>}
         </div>
       </nav>
     </>
