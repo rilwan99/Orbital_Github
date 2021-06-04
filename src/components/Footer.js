@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
+<<<<<<< HEAD
     <div className="footer-container">
       <section className="footer-subscription">
         <p className="footer-subscription-heading">
@@ -12,6 +13,14 @@ function Footer() {
         </p>
         <p className="footer-subscription-text">
           You can unsubscribe at any time.
+=======
+    <div className='footer-container'>
+      <section className='footer-subscription'>
+        <p className='footer-subscription-heading'>
+Join the InvestmentGuru community and connect with like-minded individuals!        </p>
+        <p className='footer-subscription-text'>
+          Your chance to learn more and help others learn as well
+>>>>>>> master
         </p>
         <div className="input-areas">
           <form>
@@ -21,7 +30,11 @@ function Footer() {
               type="email"
               placeholder="Your Email"
             />
+<<<<<<< HEAD
             <Button buttonStyle="btn--outline">Subscribe</Button>
+=======
+            <Button buttonStyle='btn--outline'>Sign up</Button>
+>>>>>>> master
           </form>
         </div>
       </section>
@@ -29,14 +42,21 @@ function Footer() {
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
             <h2>About Us</h2>
+<<<<<<< HEAD
             <Link to="/sign-up">How it works</Link>
             <Link to="/">Testimonials</Link>
             <Link to="/">Careers</Link>
             <Link to="/">Investors</Link>
             <Link to="/">Terms of Service</Link>
+=======
+            <Link to='/sign-up'>How it works</Link>
+            <Link to='/'>Testimonials</Link>
+            <Link to='/'>Investors</Link>
+>>>>>>> master
           </div>
           <div class="footer-link-items">
             <h2>Contact Us</h2>
+<<<<<<< HEAD
             <Link to="/">Contact</Link>
             <Link to="/">Support</Link>
             <Link to="/">Destinations</Link>
@@ -70,6 +90,30 @@ function Footer() {
           </div>
           <small class="website-rights">Investment Gurus © 2020</small>
           <div class="social-icons">
+=======
+            <Link to='/'>Contact</Link>
+            <Link to='/'>Support</Link>
+          </div>
+        </div>
+        <div className='footer-link-wrapper'>
+          <div class='footer-link-items'>
+            <h2>Social Media</h2>
+            <Link to='/'>Instagram</Link>
+            <Link to='/'>Facebook</Link>
+            <Link to='/'>Twitter</Link>
+          </div>
+        </div>
+      </div>
+      <section class='social-media'>
+        <div class='social-media-wrap'>
+          <div class='footer-logo'>
+            <Link to='/' className='social-logo'>
+              INVESTMENTGURU
+              <i class='fab fa-typo3' />
+            </Link>
+          </div>
+          <div class='social-icons'>
+>>>>>>> master
             <Link
               class="social-icon-link facebook"
               to="/"
