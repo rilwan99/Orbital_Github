@@ -1,11 +1,14 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import Navbar from "./components/Navbar";
-import "./App.css";
 import Home from "./components/pages/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import SignUpForm from "./components/SignUpForm";
 import Services from "./components/pages/Services";
 import Products from "./components/pages/Products";
 import SignUp from "./components/pages/SignUp";
+import "./App.css";
 
 function App() {
   return (
