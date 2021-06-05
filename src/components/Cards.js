@@ -5,7 +5,7 @@ import CardItem from "./CardItem.js";
 function Cards() {
   return (
     <div className="cards">
-      <h1>Check out these USEFUL articles!</h1>
+      <h1 className="header1">Check out these useful articles!</h1>
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
@@ -13,13 +13,13 @@ function Cards() {
               src="images/stockmarket.jpg"
               text="Introduction to the stock market"
               label="Stocks"
-              path="/services"
+              path="/trending"
             />
             <CardItem
               src="images/dogecoin.jpeg"
               text="The future of finance"
               label="Crypocurrency"
-              path="/services"
+              path="/trending"
             />
           </ul>
           <ul className="cards__items">
@@ -27,7 +27,7 @@ function Cards() {
               src="images/optionstrading.jpg"
               text="Technical Analysis tutorial"
               label="Options"
-              path="/services"
+              path="/trending"
             />
             <CardItem
               src="images/reits.jpg"
