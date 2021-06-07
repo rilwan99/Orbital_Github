@@ -13,13 +13,13 @@ function Cards() {
               src="images/stockmarket.jpg"
               text="Introduction to the stock market"
               label="Stocks"
-              path="/trending"
+              path="https://www.nerdwallet.com/article/investing/stock-market-basics-everything-beginner-investors-know"
             />
             <CardItem
               src="images/dogecoin.jpeg"
               text="The future of finance"
-              label="Crypocurrency"
-              path="/trending"
+              label="Cryptocurrency"
+              path="https://www.analyticsinsight.net/4-reasons-cryptocurrency-is-the-future-of-finance/"
             />
           </ul>
           <ul className="cards__items">
@@ -27,19 +27,19 @@ function Cards() {
               src="images/optionstrading.jpg"
               text="Technical Analysis tutorial"
               label="Options"
-              path="/trending"
+              path="https://corporatefinanceinstitute.com/resources/knowledge/trading-investing/technical-analysis/"
             />
             <CardItem
               src="images/reits.jpg"
               text="Is it profitable to invest in property?"
               label="REIT"
-              path="/products"
+              path="https://www.reit.com/investing/why-invest-reits"
             />
             <CardItem
               src="images/accounting.jpg"
               text="Fundamental analysis tutorial"
               label="Securities Research"
-              path="/sign-up"
+              path="https://www.thebalance.com/tools-of-fundamental-analysis-3140772"
             />
           </ul>
         </div>
