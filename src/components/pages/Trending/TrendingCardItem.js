@@ -18,6 +18,7 @@ function TrendingCardItem(props) {
           </figure>
           <div className="trendingCards__item__info">
             <h5 className="trendingCards__item__text">{props.text}</h5>
+            <h4 className="trendingCards__item__subtext">{props.subtext}</h4>
           </div>
         </a>
       </li>
