@@ -6,7 +6,7 @@ import Home from "./components/pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpForm from "./components/SignUpForm";
 import Trending from "./components/pages/Trending/Trending";
-import Products from "./components/pages/Products";
+import FinInstruments from "./components/pages/FinInstruments/FinInstruments";
 import SignUp from "./components/pages/SignUp";
 import "./App.css";
 
@@ -18,7 +18,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/trending" component={Trending} />
-          <Route path="/products" component={Products} />
+          <Route path="/finInstruments" component={FinInstruments} />
           <Route path="/sign-up" component={SignUp} />
         </Switch>
       </Router>
