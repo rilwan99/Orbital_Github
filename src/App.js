@@ -1,9 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
-import "bootstrap/dist/css/bootstrap.min.css";
 import SignUpForm from "./components/SignUpForm";
 import Trending from "./components/pages/Trending/Trending";
 import FinInstruments from "./components/pages/FinInstruments/FinInstruments";
