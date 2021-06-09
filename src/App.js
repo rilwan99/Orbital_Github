@@ -8,6 +8,7 @@ import FinInstruments from "./components/pages/FinInstruments/FinInstruments";
 import SignUp from "./components/pages/SignUp";
 import "./App.css";
 import Stocks from "./components/pages/FinInstruments/Stocks";
+import Crypto from "./components/pages/FinInstruments/Crypto";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/trending" component={Trending} />
           <Route path="/finInstruments" component={FinInstruments} />
           <Route path="/Stocks" component={Stocks} />
+          <Route path="/Crypto" component={Crypto} />
           <Route path="/sign-up" component={SignUp} />
         </Switch>
       </Router>

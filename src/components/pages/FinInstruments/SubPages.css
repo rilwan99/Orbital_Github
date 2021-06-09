@@ -25,6 +25,7 @@
   border-style: outset;
   border-width: thin;
   margin: 2% 20% 2%;
+  padding-top: 0.5%;
   padding-bottom: 1%;
   padding-right: 1%;
   border-color: whitesmoke;
@@ -45,7 +46,7 @@ li {
   color: white;
   margin-left: 5%;
   margin-top: 1%;
-  color: rgb(155, 147, 139);
+  color: rgb(173, 173, 173);
 }
 
 .tag {
@@ -53,7 +54,7 @@ li {
 }
 
 .tag:hover {
-  text-decoration: underline;
+  color: rgb(174, 174, 255);
 }
 
 .body-text {

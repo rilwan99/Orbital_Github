@@ -41,7 +41,7 @@ function FinInstruments() {
                 subtext2="Volatility: High"
                 subtext3="Learning curve: Medium"
                 subtext4="Returns: High"
-                path="/Stocks"
+                path="/Crypto"
               />
             </ul>
             <ul className="trendingCards__items">
