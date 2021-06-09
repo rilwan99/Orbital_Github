@@ -3,13 +3,14 @@
   background: rgb(41, 39, 39);
 }
 
-h1 {
-  text-align: center;
+.intro-text {
+  margin-top: 1%;
+  text-align: left;
   color: white;
 }
 
-p {
-  text-align: left;
+.finHeader {
+  text-align: center;
   color: white;
 }
 
@@ -18,7 +19,7 @@ p {
   flex-flow: column;
   align-items: center;
   max-width: 1120px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -62,20 +63,6 @@ p {
   animation-duration: 2s;
 }
 
-.finCards__item__pic-wrap::after {
-  content: attr(data-category);
-  position: absolute;
-  bottom: 0;
-  margin-left: 10px;
-  padding: 6px 8px;
-  max-width: calc((100%) - 60px);
-  font-size: 12px;
-  font-weight: 700;
-  color: white;
-  background-color: #1f98f4;
-  box-sizing: border-box;
-}
-
 .finCards__item__img {
   position: absolute;
   top: 0;
@@ -96,19 +83,25 @@ p {
 }
 
 .finCards__item__info {
-  padding: 20px 30px 30px;
+  padding: 20px 20px 20px;
 }
 
 .finCards__item__text {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 24px;
   color: white;
+  margin-bottom: 10px;
+}
+
+.finCards__item__text:hover {
+  text-decoration: underline;
 }
 
 .finCards__item__subtext {
   font-size: 14px;
   line-height: 24px;
-  color: white;
+  color: whitesmoke;
+  margin: 0px 5px 3px;
 }
 
 @media only screen and (min-width: 1200px) {

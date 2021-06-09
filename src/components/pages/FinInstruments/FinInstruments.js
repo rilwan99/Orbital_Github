@@ -7,71 +7,61 @@ function FinInstruments() {
   return (
     <>
       <div className="finCards">
-        <h1>Financial Instruments</h1>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.{" "}
+        <h1 className="finHeader">Financial Instruments</h1>
+        <p className="intro-text">
+          If you are ready to start investing but aren't sure of the first steps
+          to take, you’ve come to the right place. Some popular financial
+          instrumnets include: Stocks, Cryptocurrencies, Options and REITs
         </p>
 
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.{" "}
-        </p>
-
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.{" "}
+        <p className="intro-text">
+          However, knowledge is crucial before you can start your own investment
+          journey. Having an awareness of your risk apetite, expectations of
+          returns and your intentions behind your investment is imperative.
+          After doing some self-evaluation, pick the financial instrument that
+          aligns with your goals the most.
         </p>
 
         <div className="finCards__container">
           <div className="finCards__wrapper">
             <ul className="trendingCards__items">
               <FinCardItem
-                src="https://images.moneycontrol.com/static-mcnews/2020/01/Sensex_BSE_NSE_Stock-market_bull_bear_Gold-1-770x433.png?impolicy=website&width=770&height=431"
-                text="Investing in Stocks"
-                subtext="Options Trading"
-                path="https://www.moneycontrol.com/news/business/markets/trading-expensive-options-amid-covid-19-uncertainties-heres-what-you-need-to-know-5082561.html"
+                src="https://specials-images.forbesimg.com/imageserve/5fbc4c24998557783b8cb83c/960x0.jpg?fit=scale"
+                text="Stocks, Shares and Securities"
+                subtext1="Risk Apetite: Medium"
+                subtext2="Volatility: Medium"
+                subtext3="Learning curve: Medium"
+                subtext4="Returns: Medium"
+                path="/Stocks"
               />
               <FinCardItem
-                src="https://www.syfe.com/magazine/wp-content/uploads/2020/04/Blog-Banner-Time-to-invest-55.png"
-                text="Investing in Cryptocurrency"
-                subtext="REIT"
-                path="https://www.businesstimes.com.sg/real-estate/retail-investors-snap-up-chinas-first-batch-of-reits"
+                src="https://images.livemint.com/img/2020/12/24/600x338/bitcoin_1583349940408_1608811162884.jpg"
+                text="Cryptocurrencies"
+                subtext1="Risk Apetite: High"
+                subtext2="Volatility: High"
+                subtext3="Learning curve: Medium"
+                subtext4="Returns: High"
+                path="/Stocks"
               />
             </ul>
             <ul className="trendingCards__items">
               <FinCardItem
-                src="https://images.moneycontrol.com/static-mcnews/2020/01/Sensex_BSE_NSE_Stock-market_bull_bear_Gold-1-770x433.png?impolicy=website&width=770&height=431"
-                text=" Learing Options Trading"
-                subtext="Options Trading"
-                path="https://www.moneycontrol.com/news/business/markets/trading-expensive-options-amid-covid-19-uncertainties-heres-what-you-need-to-know-5082561.html"
+                src="https://cabotwealth.com/wp-content/uploads/Financial-Activity-Monitor.jpg"
+                text="Options and Futures trading"
+                subtext1="Risk Apetite: High"
+                subtext2="Volatility: Medium"
+                subtext3="Learning curve: High"
+                subtext4="Returns: High"
+                path="/Stocks"
               />
               <FinCardItem
-                src="https://www.syfe.com/magazine/wp-content/uploads/2020/04/Blog-Banner-Time-to-invest-55.png"
+                src="https://www.fool.com.au/wp-content/uploads/2019/06/REIT-16.9.jpg"
                 text="Investing in REITs (Real estate investment trust)"
-                subtext="REIT (Real estate investment trust)"
-                path="https://www.businesstimes.com.sg/real-estate/retail-investors-snap-up-chinas-first-batch-of-reits"
+                subtext1="Risk Apetite: Low"
+                subtext2="Volatility: Low"
+                subtext3="Learning curve: Medium"
+                subtext4="Returns: Low"
+                path="/Stocks"
               />
             </ul>
           </div>
