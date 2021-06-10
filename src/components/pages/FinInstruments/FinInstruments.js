@@ -52,7 +52,7 @@ function FinInstruments() {
                 subtext2="Volatility: Medium"
                 subtext3="Learning curve: High"
                 subtext4="Returns: High"
-                path="/Stocks"
+                path="/Options"
               />
               <FinCardItem
                 src="https://www.fool.com.au/wp-content/uploads/2019/06/REIT-16.9.jpg"
@@ -61,7 +61,7 @@ function FinInstruments() {
                 subtext2="Volatility: Low"
                 subtext3="Learning curve: Medium"
                 subtext4="Returns: Low"
-                path="/Stocks"
+                path="/REITs"
               />
             </ul>
           </div>
