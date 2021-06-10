@@ -1,13 +1,11 @@
 import React from "react";
-import SignUpForm from "../SignUpForm";
-import Footer from "../Footer";
+import Form from "../Form";
 import "../../App.css";
 
 function SignUp() {
   return (
     <>
-      <SignUpForm />
-      <Footer />
+      <Form />
     </>
   );
   //return <h1 className='sign-up'>LIKE & SUBSCRIBE</h1>;
