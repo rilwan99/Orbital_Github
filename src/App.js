@@ -1,4 +1,9 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//import { FirebaseDatabaseProvider } from "@react-firebase/auth";
+//import { config } from "./components/config/firebase";
+//import { firebase } from "@firebase/app";
+//import * as firebase from "firebase/app";
+//import "firebase/auth";
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
@@ -10,6 +15,7 @@ import Stocks from "./components/pages/FinInstruments/Stocks";
 import Crypto from "./components/pages/FinInstruments/Crypto";
 import Options from "./components/pages/FinInstruments/Options";
 import Reits from "./components/pages/FinInstruments/Reits";
+import { FirebaseDatabaseProvider } from "@react-firebase/auth";
 
 function App() {
   return (
