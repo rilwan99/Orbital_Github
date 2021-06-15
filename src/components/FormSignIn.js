@@ -1,12 +1,8 @@
 import firebase from "firebase/app";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 import React, { useState, useEffect } from "react";
-//import "../App.css";
-//import { Button } from "./Button";
-//import "./Button.css";
 import "./FormSignIn.css";
 import "./Form.css";
-import { CenterFocusStrong } from "@material-ui/icons";
 
 function FormSignIn() {
   const handleSignIn = (firebase) => {
