@@ -7,7 +7,6 @@ import {
 } from "@react-firebase/auth";
 import { config } from "./components/config/firebase";
 import firebase from "firebase/app";
-import "@firebase/auth";
 import "firebase/database";
 import "firebase/storage";
 import "firebase/firestore";
