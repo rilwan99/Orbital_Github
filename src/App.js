@@ -1,13 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-//import { FirebaseDatabaseProvider } from "@react-firebase/auth";
-//import { config } from "./components/config/firebase";
-//import { firebase } from "@firebase/app";
-//import * as firebase from "firebase/app";
-//import "firebase/auth";
+
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import SignUp from "./components/pages/SignUp";
+import SignIn from "./components/pages/SignIn";
 import Trending from "./components/pages/Trending/Trending";
 import FinInstruments from "./components/pages/FinInstruments/FinInstruments";
 import "./App.css";
@@ -15,7 +12,7 @@ import Stocks from "./components/pages/FinInstruments/Stocks";
 import Crypto from "./components/pages/FinInstruments/Crypto";
 import Options from "./components/pages/FinInstruments/Options";
 import Reits from "./components/pages/FinInstruments/Reits";
-import { FirebaseDatabaseProvider } from "@react-firebase/auth";
+//import { FirebaseDatabaseProvider } from "@react-firebase/auth";
 
 function App() {
   return (
@@ -31,6 +28,7 @@ function App() {
           <Route path="/Options" component={Options} />
           <Route path="/Reits" component={Reits} />
           <Route path="/sign-up" component={SignUp} />
+          <Route path="/sign-in" component={SignIn} />
         </Switch>
       </Router>
     </>

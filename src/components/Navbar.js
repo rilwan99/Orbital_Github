@@ -2,6 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import {
+  FirebaseAuthProvider,
+  IfFirebaseAuthed,
+  IfFirebaseUnAuthed,
+} from "@react-firebase/auth";
+import firebase from "firebase/app";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -70,10 +76,19 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          {button && <Button buttonStyle="btn--outline">SIGN IN</Button>}
-          &nbsp;&nbsp;&nbsp;
+          <IfFirebaseUnAuthed>
+            {button && <Button buttonStyle="btn--outline">SIGN UP/IN</Button>}
+          </IfFirebaseUnAuthed>
+          <IfFirebaseAuthed>
+            <button
+              className="btn--outline"
+              onClick={() => {
+                firebase.app().auth().signOut();
+              }}
+            >
+              SIGN OUT
+            </button>
+          </IfFirebaseAuthed>
         </div>
       </nav>
     </>
