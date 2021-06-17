@@ -6,7 +6,6 @@ import React, { useState, useEffect } from "react";
 //import "./Button.css";
 import "./FormSignIn.css";
 import "./Form.css";
-import { CenterFocusStrong } from "@material-ui/icons";
 
 function FormSignIn() {
   const handleSignIn = (firebase) => {
