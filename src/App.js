@@ -12,6 +12,7 @@ import Stocks from "./components/pages/FinInstruments/Stocks";
 import Crypto from "./components/pages/FinInstruments/Crypto";
 import Options from "./components/pages/FinInstruments/Options";
 import Reits from "./components/pages/FinInstruments/Reits";
+import Forum from "./components/pages/Forum/forum";
 //import { FirebaseDatabaseProvider } from "@react-firebase/auth";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/Reits" component={Reits} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
+          <Route path="/forum" component={Forum} />
         </Switch>
       </Router>
     </>

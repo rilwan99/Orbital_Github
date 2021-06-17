@@ -1,0 +1,56 @@
+.forum {
+  padding: 4rem;
+  background: rgb(41, 39, 39);
+}
+
+.forumHeader {
+  text-align: center;
+  color: white;
+}
+
+.forum-text {
+  margin-top: 1%;
+  text-align: left;
+  color: white;
+}
+
+.button-div {
+  text-align: center;
+  margin-top: 2%;
+}
+
+.postCards__item__info {
+  padding: 20px 20px 20px;
+  border-color: black;
+}
+
+.postCards__item__text {
+  font-size: 22px;
+  line-height: 24px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.postCards__item__subtext {
+  font-size: 14px;
+  line-height: 24px;
+  color: whitesmoke;
+}
+
+@media only screen and (min-width: 1200px) {
+  .content__blog__container {
+    width: 84%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .postCards__items {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .postCards__item {
+    margin-bottom: 2rem;
+  }
+}
