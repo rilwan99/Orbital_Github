@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
+import {
+  FirebaseAuthConsumer,
+  IfFirebaseAuthed,
+  IfFirebaseUnAuthed,
+} from "@react-firebase/auth";
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
@@ -13,6 +18,8 @@ import Crypto from "./components/pages/FinInstruments/Crypto";
 import Options from "./components/pages/FinInstruments/Options";
 import Reits from "./components/pages/FinInstruments/Reits";
 import Forum from "./components/pages/Forum/forum";
+import NewPost from "./components/pages/newPost";
+
 //import { FirebaseDatabaseProvider } from "@react-firebase/auth";
 
 function App() {
@@ -31,6 +38,7 @@ function App() {
           <Route path="/sign-up" component={SignUp} />
           <Route path="/sign-in" component={SignIn} />
           <Route path="/forum" component={Forum} />
+          <Route path="/new-post" component={NewPost} />
         </Switch>
       </Router>
     </>
