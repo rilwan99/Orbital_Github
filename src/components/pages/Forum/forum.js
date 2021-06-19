@@ -14,25 +14,19 @@ function Forum() {
           questions which you would like to clarify. The investmentGuru
           community will be happy to answer your questions.
         </p>
-
         <div className="button-div">
           <Button className="btns" onClick={console.log("hey")}>
             Add new Post
           </Button>
         </div>
-
+        // Onclick function to add new post // Create a form to input the post
+        // Send the data to firebase and update the datastorre // Retrive post
+        from the dataStore - UseState && useEffect
         <Post
-          text="Post Title"
-          subtext1="Post description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel neque vel tortor suscipit consectetur. Pellentesque efficitur est velit, id mollis lorem laoreet nec. Nam vel ullamcorper sapien. Sed sit amet dignissim nibh. Nam dignissim varius quam sed condimentum. Morbi eleifend enim a ante euismod malesuada. In eget convallis risus. Integer sed enim at ipsum mollis tincidunt a luctus mi."
-          subtext2="Author: Jonathan"
-          subtext3="Date and time: 24th May 1530hrs"
-        />
-
-        <Post
-          text="Post Title"
-          subtext1="Post description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel neque vel tortor suscipit consectetur. Pellentesque efficitur est velit, id mollis lorem laoreet nec. Nam vel ullamcorper sapien. Sed sit amet dignissim nibh. Nam dignissim varius quam sed condimentum. Morbi eleifend enim a ante euismod malesuada. In eget convallis risus. Integer sed enim at ipsum mollis tincidunt a luctus mi."
-          subtext2="Author: Jonathan"
-          subtext3="Date and time: 24th May 1530hrs"
+          title="Post Title"
+          description="Post description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel neque vel tortor suscipit consectetur. Pellentesque efficitur est velit, id mollis lorem laoreet nec. Nam vel ullamcorper sapien. Sed sit amet dignissim nibh. Nam dignissim varius quam sed condimentum. Morbi eleifend enim a ante euismod malesuada. In eget convallis risus. Integer sed enim at ipsum mollis tincidunt a luctus mi."
+          author="Author: Jonathan"
+          dateTime="Date and time: 24th May 1530hrs"
         />
       </div>
       <Footer />

@@ -6,10 +6,10 @@ function Post(props) {
     <>
       <div className="postCards__item">
         <div className="postCards__item__info">
-          <h5 className="postCards__item__text">{props.text}</h5>
-          <p className="postCards__item__subtext">{props.subtext1}</p>
-          <p className="postCards__item__subtext">{props.subtext2}</p>
-          <p className="postCards__item__subtext">{props.subtext3}</p>
+          <h5 className="postCards__item__text">{props.title}</h5>
+          <p className="postCards__item__subtext">{props.description}</p>
+          <p className="postCards__item__subtext">{props.author}</p>
+          <p className="postCards__item__subtext">{props.dateTime}</p>
         </div>
       </div>
     </>
