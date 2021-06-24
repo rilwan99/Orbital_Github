@@ -11,7 +11,7 @@ function FormSignIn() {
   };
   return (
     <div className="sign-in-format">
-      <p style={{ fontSize: 18 }}>Not Logged In.</p>
+      <p style={{ fontSize: 20 }}>Not Logged In.</p>
       <FirebaseAuthConsumer>
         {({ firebase }) => (
           <button
