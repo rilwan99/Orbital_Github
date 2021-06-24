@@ -1,5 +1,5 @@
 .forum {
-  padding: 4rem;
+  padding: 2rem;
   background: rgb(41, 39, 39);
 }
 
@@ -10,18 +10,41 @@
 
 .forum-text {
   margin-top: 1%;
-  text-align: left;
+  text-align: center;
   color: white;
 }
 
-.button-div {
+.newPost-div {
   text-align: center;
-  margin-top: 2%;
+  color: white;
+  border-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+  border-style: solid;
+  font-size: 20px;
 }
 
+.form-header {
+  color: gray;
+  font-size: 18px;
+  text-align: left;
+  display: inline-block;
+}
+
+.namebox,
+.titlebox,
+.textbox {
+  margin-bottom: 0.5rem;
+}
+.textbox {
+  width: 60%;
+}
 .postCards__item__info {
   padding: 20px 20px 20px;
   border-color: black;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 .postCards__item__text {
