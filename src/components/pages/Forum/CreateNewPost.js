@@ -1,10 +1,57 @@
-import React, { useState, useEffect } from "react";
-//import firebase from "firebase/app";
-import { IfFirebaseAuthed, IfFirebaseUnAuthed } from "@react-firebase/auth";
+import React, { useState } from "react";
+import {
+  FirebaseAuthConsumer,
+  IfFirebaseAuthed,
+  IfFirebaseUnAuthed,
+} from "@react-firebase/auth";
 import { firebase } from "@firebase/app";
 
+/*
+const np = {
+  Author: "",
+  Date: "",
+  description: "",
+  title: "",
+};*/
+
+const initialValues = {
+  Author: "",
+  date: "",
+  description: "",
+  title: "",
+};
+
 function CreateNewPost() {
-  const [post, setPost] = useState([]);
+  const [values, setValues] = useState(initialValues);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    const uid = firebase.auth().currentUser?.uid;
+    const db = firebase.firestore();
+
+    db.collection("forumposts")
+      .doc(uid)
+      .set({
+        Author: values.Author,
+        Date: values.date,
+        description: values.description,
+        title: values.title,
+      })
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  };
+
   /**The code here might not be needed. */
   /*
   function handleSubmitPost(event) {
@@ -58,47 +105,52 @@ db.collection("cities").doc("LA").set({
   }
   */
 
-  const date = new Date();
-
   return (
-    <>
+    <FirebaseAuthConsumer>
       <IfFirebaseUnAuthed>Login to create a new post!</IfFirebaseUnAuthed>
       <IfFirebaseAuthed>
         <div>
           <form>
-            <label>Title:</label>
+            <label>Title: </label>
             <input
-              type="text"
-              id="title"
-              placeholder="Create a relevant title!"
-            ></input>
+              value={values.title}
+              onChange={handleInputChange}
+              name="title"
+              label="Title:"
+            />
             <br></br>
-            <label>Description:</label>
+            <label>Description </label>
             <input
-              type="text"
-              id="description"
-              placeholder="Write your post here."
-            ></input>
+              value={values.description}
+              onChange={handleInputChange}
+              name="description"
+              label="Your Post:"
+            />
+            <br></br>
+            <label>Name: </label>
+            <input
+              value={values.Author}
+              onChange={handleInputChange}
+              name="Author"
+              label="Your Name:"
+            />
+            <br></br>
+            <label>Date: </label>
+            <input
+              value={values.date}
+              onChange={handleInputChange}
+              name="date"
+              label="The date"
+            />
+            <br></br>
+            <button type="submit" onClick={handleSubmit}>
+              Submit
+            </button>
           </form>
-          <button
-          //Need to
-          //onSubmit={() => setPost(post + { title } + { description })}
-          ></button>
         </div>
       </IfFirebaseAuthed>
-    </>
+    </FirebaseAuthConsumer>
   );
 }
-
-/*
-class Post{
-  constructor(author, date, description, title) {
-    this.author = author;
-    this.date = date;
-    this.description = description;
-    this.title = title;
-  }
-}
-*/
 
 export default CreateNewPost;
