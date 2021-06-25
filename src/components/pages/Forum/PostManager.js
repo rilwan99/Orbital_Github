@@ -10,12 +10,22 @@ function PostManager() {
   const [newPostText, setNewPostText] = useState("");
   const [newPostName, setNewPostName] = useState("");
 
+  /* React honours default browser behavior and the
+        default behaviour for a form submission is to
+        submit AND refresh the page. So we override the
+        default behaviour here as we don't want to refresh
+  */
   function handleAddPost(event) {
     event.preventDefault();
-    addPost(newPostTitle, newPostText, newPostName, firebase);
+    addPost(newPostTitle, newPostText, newPostName);
   }
 
+  /* the ... operator is called the spread operator
+       what we are doing is creating a brand new array of
+       posts, that is different from the previous array
+  */
   function addPost(title, text, name) {
+    /* JS method to obtain timestamp */
     var today = new Date();
     var date =
       today.getFullYear() +
@@ -27,6 +37,7 @@ function PostManager() {
       today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date + " " + time;
 
+    /* Creating a new element and appending it to the post array */
     const newPosts = [
       {
         title: title,
@@ -39,45 +50,67 @@ function PostManager() {
     setPosts(newPosts);
   }
 
-  useEffect(() => {
-    const uid = firebase.auth().currentUser?.uid;
-    const db = firebase.firestore();
-    db.collection("/forumposts").doc(uid).set({ posts: posts });
-  }, [posts]);
+  /* useEffect hook to save data to firestore (log document)
+      useEffect(() => {
+        const db = firebase.firestore();
+        db.collection("/forumpost").doc("log").update({ post: posts });
+      });
+    */
+
+  /* useEffect hook to retrieve data from firestore(records document)
+      Able to retrieve and console.log the data, but how to render it as a Post component?
+      useEffect(() => {
+        const uid = firebase.auth().currentUser?.uid;
+        const db = firebase.firestore();
+        const docRef = db.collection("/forumpost").doc("records");
+
+        docRef.get().then((doc) => {
+          console.log(doc.data().oldpost);
+        });
+      }, []);
+
+  */
 
   return (
     <div>
-      <div className="button-div">Add new Post</div>
-      <form onSubmit={handleAddPost}>
-        <label>Title:</label>
-        <input
-          type="text"
-          id="title"
-          value={newPostTitle}
-          onChange={(event) => setNewPostTitle(event.target.value)}
-          placeholder="Create a relevant title!"
-        ></input>
+      <div className="newPost-div">
+        Add new Post
         <br></br>
-        <label>Description:</label>
-        <input
-          type="text"
-          id="text"
-          value={newPostText}
-          onChange={(event) => setNewPostText(event.target.value)}
-          placeholder="Write your post here."
-        ></input>
-        <br></br>
-        <label>Name:</label>
-        <input
-          type="text"
-          id="name"
-          value={newPostName}
-          onChange={(event) => setNewPostName(event.target.value)}
-          placeholder="Write your name here."
-        ></input>
-        <br></br>
-        <input type="submit" value="Add" />
-      </form>
+        <form className="formstyle" onSubmit={handleAddPost}>
+          <label className="form-header">Title:</label>
+          <input
+            className="titlebox"
+            type="text"
+            id="title"
+            value={newPostTitle}
+            onChange={(event) => setNewPostTitle(event.target.value)}
+            placeholder="Create a relevant title!"
+          ></input>
+          <br></br>
+          <label className="form-header">Description:</label>
+          <br></br>
+          <input
+            className="textbox"
+            type="text"
+            id="text"
+            value={newPostText}
+            onChange={(event) => setNewPostText(event.target.value)}
+            placeholder="Write your post here."
+          ></input>
+          <br></br>
+          <label className="form-header">Name:</label>
+          <input
+            className="namebox"
+            type="text"
+            id="name"
+            value={newPostName}
+            onChange={(event) => setNewPostName(event.target.value)}
+            placeholder="Write your name here."
+          ></input>
+          <br></br>
+          <input type="submit" value="Add" />
+        </form>
+      </div>
 
       <div>
         {posts.map((post) => (

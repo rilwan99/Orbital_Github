@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Footer from "../../Footer";
 import "./post.css";
-import { Button } from "../../Button";
-import { firebase } from "@firebase/app";
 import PostManager from "./PostManager.js";
 
 function Forum() {
