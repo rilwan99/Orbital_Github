@@ -20,6 +20,27 @@ function PostManager() {
     addPost(newPostTitle, newPostText, newPostName);
   }
 
+  /*
+  const handleSubmit = (event) => {
+    const uid = firebase.auth().currentUser?.uid;
+    const db = firebase.firestore();
+
+    db.collection("forumposts")
+      .doc(uid)
+      .set({
+        Author: values.Author,
+        Date: values.date,
+        description: values.description,
+        title: values.title,
+      })
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  };*/
+
   /* the ... operator is called the spread operator
        what we are doing is creating a brand new array of
        posts, that is different from the previous array
@@ -38,6 +59,7 @@ function PostManager() {
     var dateTime = date + " " + time;
 
     /* Creating a new element and appending it to the post array */
+    //Array use is correct here
     const newPosts = [
       {
         title: title,
@@ -48,6 +70,27 @@ function PostManager() {
       ...posts,
     ];
     setPosts(newPosts);
+
+    //But the data cannot be stored as an array here
+    const uid = firebase.auth().currentUser?.uid;
+    const db = firebase.firestore();
+    db.collection("forumpost")
+      .doc()
+      .set(
+        {
+          title: title,
+          text: text,
+          name: name,
+          time: dateTime,
+        },
+        ...posts
+      )
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
   }
 
   /* useEffect hook to save data to firestore (log document)
@@ -134,3 +177,15 @@ function PostManager() {
 }
 
 export default PostManager;
+
+//Sample Post
+//Title: Buy the crypto dip: Sound advice?
+//Description: Recently, bitcoin has decreased to less than 50% of its all time highs.
+// In this post, I will discuss whether bitcoin is on a downtrend or is in time for a sharp price reversal.
+//Name: John
+
+//Sample Post2
+//Title: Are analysts' ratings trustworthy?
+//Description: How accurate are analysts' price predictions?  How do analysts even make predictions?
+//In this post, I will write about how to evaluate analyst reports.
+//Name: Jane
