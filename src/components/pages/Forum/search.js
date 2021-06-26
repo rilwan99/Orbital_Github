@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { firebase } from "@firebase/app";
 //import styles from "./post.css";
 import Post from "../Forum/post";
+import { PostAddSharp } from "@material-ui/icons";
 
 function Search() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState([]);
-  let posts = [];
+  const [posts, setPosts] = useState([]);
   const db = firebase.firestore();
 
   //preventDefault --> Receive the query from user --> Load result from database --> render the new results
@@ -73,7 +74,7 @@ function Search() {
 
   const loadData = () => {
     db.collection("forumpost")
-      .where("title", "==", "Options Pricing")
+      .where("title", "==", query)
       //.limit(15)
       .get()
       .then((querySnapshot) => {
@@ -110,16 +111,6 @@ function Search() {
   const renderPosts = () => {
     console.log("function renderposts is called");
     console.log(posts);
-    {
-      posts.map((post) => (
-        <Post
-          title={post.title}
-          text={post.text}
-          name={post.name}
-          time={post.time}
-        />
-      ));
-    }
   };
 
   /* Example of rendering
@@ -148,6 +139,16 @@ function Search() {
           </button>
         </label>
       </form>
+      <div>
+        {posts.map((post) => (
+          <Post
+            title={post.title}
+            text={post.text}
+            name={post.name}
+            time={post.time}
+          />
+        ))}
+      </div>
     </>
   );
 }
