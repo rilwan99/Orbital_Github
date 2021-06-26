@@ -6,7 +6,7 @@ import Post from "../Forum/post";
 function Search() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState([]);
-  //let posts = [];
+  let posts = [];
   const db = firebase.firestore();
 
   //preventDefault --> Receive the query from user --> Load result from database --> render the new results
@@ -27,6 +27,7 @@ function Search() {
 
   useEffect(() => {
     renderPosts();
+    console.log("UseEffect-renderposts is called");
   }, []);
 
   //useEffect();
@@ -83,10 +84,10 @@ function Search() {
         }
         querySnapshot.forEach((doc) => {
           console.log(doc.id, " => ", doc.data());
-          setResult(doc.data(), ...result);
-          console.log(result);
-          //posts.push(doc.data());
-          //console.log(posts);
+          //setResult(doc.data(), ...result);
+          //console.log(result);
+          posts.push(doc.data());
+          console.log(posts);
           // doc.data() is never undefined for query doc snapshots
         });
         //setResult(posts);
@@ -107,19 +108,18 @@ function Search() {
   //suspect sth wrong here
   /*TODO */
   const renderPosts = () => {
-    console.log(result);
-    return result.map((post) => {
-      return (
-        <div>
-          <Post
-            title={post.title}
-            text={post.text}
-            name={post.name}
-            time={post.time}
-          />
-        </div>
-      );
-    });
+    console.log("function renderposts is called");
+    console.log(posts);
+    {
+      posts.map((post) => (
+        <Post
+          title={post.title}
+          text={post.text}
+          name={post.name}
+          time={post.time}
+        />
+      ));
+    }
   };
 
   /* Example of rendering

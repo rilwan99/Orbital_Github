@@ -136,18 +136,18 @@ function PostManager() {
         {posts.map((post) => (
           <Post
             title={post.title}
-            description={post.text}
-            author={post.name}
-            dateTime={post.time}
+            text={post.text}
+            name={post.name}
+            time={post.time}
           />
         ))}
       </div>
 
       <Post
         title="Post Title"
-        description="Post description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel neque vel tortor suscipit consectetur. Pellentesque efficitur est velit, id mollis lorem laoreet nec. Nam vel ullamcorper sapien. Sed sit amet dignissim nibh. Nam dignissim varius quam sed condimentum. Morbi eleifend enim a ante euismod malesuada. In eget convallis risus. Integer sed enim at ipsum mollis tincidunt a luctus mi."
-        author="Author: Jonathan"
-        dateTime="Date and time: 24th May 1530hrs"
+        text="Post description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel neque vel tortor suscipit consectetur. Pellentesque efficitur est velit, id mollis lorem laoreet nec. Nam vel ullamcorper sapien. Sed sit amet dignissim nibh. Nam dignissim varius quam sed condimentum. Morbi eleifend enim a ante euismod malesuada. In eget convallis risus. Integer sed enim at ipsum mollis tincidunt a luctus mi."
+        name="Author: Jonathan"
+        time="Date and time: 24th May 1530hrs"
       />
     </div>
   );
