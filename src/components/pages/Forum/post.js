@@ -7,9 +7,9 @@ function Post(props) {
       <div className="postCards__item">
         <div className="postCards__item__info">
           <h5 className="postCards__item__text">{props.title}</h5>
-          <p className="postCards__item__subtext">{props.description}</p>
-          <p className="postCards__item__subtext">{props.author}</p>
-          <p className="postCards__item__subtext">{props.dateTime}</p>
+          <p className="postCards__item__subtext">{props.text}</p>
+          <p className="postCards__item__subtext">{props.name}</p>
+          <p className="postCards__item__subtext">{props.time}</p>
         </div>
       </div>
     </>

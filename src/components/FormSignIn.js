@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
+//import firebase from "firebase/app";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./FormSignIn.css";
 import "./Form.css";
 

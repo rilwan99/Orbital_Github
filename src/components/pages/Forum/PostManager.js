@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Post from "./post.js";
 import "./post.css";
-import { Button } from "../../Button";
 import { firebase } from "@firebase/app";
 
 function PostManager() {
@@ -19,27 +18,6 @@ function PostManager() {
     event.preventDefault();
     addPost(newPostTitle, newPostText, newPostName);
   }
-
-  /*
-  const handleSubmit = (event) => {
-    const uid = firebase.auth().currentUser?.uid;
-    const db = firebase.firestore();
-
-    db.collection("forumposts")
-      .doc(uid)
-      .set({
-        Author: values.Author,
-        Date: values.date,
-        description: values.description,
-        title: values.title,
-      })
-      .then(() => {
-        console.log("Document successfully written!");
-      })
-      .catch((error) => {
-        console.error("Error writing document: ", error);
-      });
-  };*/
 
   /* the ... operator is called the spread operator
        what we are doing is creating a brand new array of
@@ -72,7 +50,6 @@ function PostManager() {
     setPosts(newPosts);
 
     //But the data cannot be stored as an array here
-    const uid = firebase.auth().currentUser?.uid;
     const db = firebase.firestore();
     db.collection("forumpost")
       .doc()
@@ -189,3 +166,8 @@ export default PostManager;
 //Description: How accurate are analysts' price predictions?  How do analysts even make predictions?
 //In this post, I will write about how to evaluate analyst reports.
 //Name: Jane
+
+//Sample Post3 for testing search
+//Title: Options Pricing
+//Description: How do we calculate option pricing?  What is the Black Scholes Model?
+//Name: Joel

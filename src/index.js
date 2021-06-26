@@ -11,7 +11,7 @@ import { firebase } from "@firebase/app";
 import "@firebase/auth";
 import "@firebase/firestore";
 firebase.initializeApp(config);
-var db = firebase.firestore();
+//var db = firebase.firestore();
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

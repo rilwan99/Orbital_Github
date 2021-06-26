@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function TrendingCardItem(props) {
   return (
@@ -10,11 +9,7 @@ function TrendingCardItem(props) {
             className="trendingCards__item__pic-wrap"
             data-category={props.label}
           >
-            <img
-              className="trendingCards__item__img"
-              alt="Travel Image"
-              src={props.src}
-            />
+            <img className="trendingCards__item__img" alt="" src={props.src} />
           </figure>
           <div className="trendingCards__item__info">
             <h5 className="trendingCards__item__text">{props.text}</h5>

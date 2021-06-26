@@ -7,11 +7,7 @@ function FinCardItem(props) {
       <li className="finCards__item">
         <Link to={props.path} className="finCards__item__link">
           <figure className="finCards__item__pic-wrap">
-            <img
-              className="finCards__item__img"
-              alt="Travel Image"
-              src={props.src}
-            />
+            <img className="finCards__item__img" src={props.src} />
           </figure>
           <div className="finCards__item__info">
             <h5 className="finCards__item__text">{props.text}</h5>

@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../../Footer";
 import "./post.css";
 import PostManager from "./PostManager.js";
+import Search from "./search";
 
 function Forum() {
   return (
@@ -14,6 +15,7 @@ function Forum() {
           community will be happy to answer your questions.
         </p>
       </div>
+      <Search />
       <PostManager />
       <Footer />
     </>
