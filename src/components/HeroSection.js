@@ -9,23 +9,6 @@ function HeroSection() {
       <video src="/videos/stockmarketvideo.mp4" autoPlay loop muted />
       <h1 style={{ maxWidth: 1000 }}>TIME TO LEARN HOW TO INVEST NOW</h1>
       <p>What are you waiting for?</p>
-      <div className="hero-btns">
-        <Button
-          className="btns"
-          buttonStyle="btn--outline"
-          buttonSize="btn--large"
-        >
-          GET STARTED
-        </Button>
-        <Button
-          className="btns"
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          onClick={console.log("hey")}
-        >
-          WATCH TUTORIAL <i className="far fa-play-circle" />
-        </Button>
-      </div>
     </div>
   );
 }
