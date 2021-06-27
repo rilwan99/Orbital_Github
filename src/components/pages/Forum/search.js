@@ -71,7 +71,10 @@ function Search() {
   //This sometimes works, and sometimes does not work.
   //No idea why, but perhaps due to asynchronous programming.
 
+  db.collection("name of collection").doc("log").get();
+
   const loadData = () => {
+    let posts = [];
     db.collection("forumpost")
       .where("title", "==", "Options Pricing")
       //.limit(15)
@@ -87,12 +90,14 @@ function Search() {
           //setResult(doc.data(), ...result);
           //console.log(result);
           posts.push(doc.data());
+          //setResult(posts);
           console.log(posts);
-          // doc.data() is never undefined for query doc snapshots
+          //doc.data() is never undefined for query doc snapshots
         });
-        //setResult(posts);
       });
-    //setResult(posts);
+
+    //console.log(result);
+    renderPosts();
   };
 
   /*
@@ -108,8 +113,24 @@ function Search() {
   //suspect sth wrong here
   /*TODO */
   const renderPosts = () => {
-    console.log("function renderposts is called");
+    console.log("Helloworld RENDERING");
     console.log(posts);
+<<<<<<< Updated upstream
+=======
+    return posts.map((post) => {
+      return (
+        <div>
+          <p>HELLOOOOOOOOOOOOOO</p>
+          <Post
+            title={post.title}
+            text={post.text}
+            name={post.name}
+            time={post.time}
+          />
+        </div>
+      );
+    });
+>>>>>>> Stashed changes
   };
 
   /* Example of rendering
@@ -139,6 +160,7 @@ function Search() {
           </button>
         </label>
       </form>
+<<<<<<< Updated upstream
       <div>
         {posts.map((post) => (
           <Post
@@ -149,6 +171,9 @@ function Search() {
           />
         ))}
       </div>
+=======
+      <div>{renderPosts}</div>
+>>>>>>> Stashed changes
     </>
   );
 }
