@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { firebase } from "@firebase/app";
-//import styles from "./post.css";
 import Post from "../Forum/post";
-import { PostAddSharp } from "@material-ui/icons";
+import "./post.css";
 
 function Search() {
   const [query, setQuery] = useState("");
@@ -74,7 +73,7 @@ function Search() {
 
   const loadData = () => {
     db.collection("forumpost")
-      .where("title", "==", query)
+      .where("title", "==", "Options Pricing")
       //.limit(15)
       .get()
       .then((querySnapshot) => {
@@ -124,10 +123,11 @@ function Search() {
 
   return (
     <>
-      <form>
-        <label>
+      <form className="search-form">
+        <label className="search-label">
           Search:
           <input
+            className="search-input"
             value={query}
             onChange={handleInputChange}
             name="query"

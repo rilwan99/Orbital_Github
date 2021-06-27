@@ -144,30 +144,37 @@ function PostManager() {
       </div>
 
       <Post
-        title="Post Title"
-        text="Post description -Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel neque vel tortor suscipit consectetur. Pellentesque efficitur est velit, id mollis lorem laoreet nec. Nam vel ullamcorper sapien. Sed sit amet dignissim nibh. Nam dignissim varius quam sed condimentum. Morbi eleifend enim a ante euismod malesuada. In eget convallis risus. Integer sed enim at ipsum mollis tincidunt a luctus mi."
-        name="Author: Jonathan"
-        time="Date and time: 24th May 1530hrs"
+        title="Buy the crypto dip: Sound advice?"
+        text="Recently, bitcoin has decreased to less than 50% of its all time highs.
+        In this post, I will discuss whether bitcoin is on a downtrend or is in time for a sharp price reversal.
+        What’s interesting to note is bitcoin has thus far outperformed the previous halving, only recently seeing lower gains than before, but still primed for a decent bull run. Of course, this time around there’s a lot more FUD being spread than in 2017, as a lot more institutional investors and people like Elon Musk have gained control of the market narrative.
+        In my opinion, we are looking at a delayed performance compared to the last bull cycle and although I firmly believe bitcoin is about to breakout, we could see this entire scenario play out over the next six to eight months, instead of a lot sooner as many would hope.
+        As analysed before, bitcoin enters a bull cycle after each halving and sees tremendous growth in the 18 months that follow. Compared to the previous cycle, bitcoin has performed much better (recent dips excluded) and it appears as though it will far outperform the previous bull cycle."
+        name="John"
+        time="24th May 1530hrs"
+      />
+      <Post
+        title="Are analysts' ratings trustworthy?"
+        text="How accurate are analysts' price predictions?  How do analysts even make predictions?
+        In this post, I will write about how to evaluate analyst reports.
+        Analysts have been actively evaluating companies as long as there have been stocks, but they're more popular and get more exposure than ever thanks to round-the-clock stock market news and online resources. Some analysts' notoriety has also increased. But while analysts typically have similar credentials, they aren't all the same.
+        For example, since positive and negative earnings surprises can have dramatic effects on stocks, you may wonder, how can a company beat the estimates with so many eyes watching? How can one analyst have a buy rating and one a sell rating? How can investors tell who will be right?
+        The first place to check is the fine print on any research report and find out how the analyst is compensated. From there, you can decide whether it's in the analyst's interest to tell you something other than the truth."
+        name="Jonathan"
+        time="14th June 0030hrs"
+      />
+      <Post
+        title="HODL"
+        text="I'm pretty sure that you have heard of the term HODL before. But what does it exactly mean? 
+        HODL stands for Hold On For Dear Life. People commonly use that term when the market is bearish and the value of their portfolio 
+        has significantly decreased.The biggest reason why “hodl” has become such a popular term is the general volatility of the prices of cryptocurrencies. 
+        Many cryptocurrency tokens, even relatively stable ones such as Bitcoin and Ethereum, frequently have very volatile market swings. 
+        The cost of these tokens can fall 100% one month and then rise 300% within the next few months."
+        name="Mary"
+        time="6th Jan 2130hrs"
       />
     </div>
   );
 }
 
 export default PostManager;
-
-//Sample Post
-//Title: Buy the crypto dip: Sound advice?
-//Description: Recently, bitcoin has decreased to less than 50% of its all time highs.
-// In this post, I will discuss whether bitcoin is on a downtrend or is in time for a sharp price reversal.
-//Name: John
-
-//Sample Post2
-//Title: Are analysts' ratings trustworthy?
-//Description: How accurate are analysts' price predictions?  How do analysts even make predictions?
-//In this post, I will write about how to evaluate analyst reports.
-//Name: Jane
-
-//Sample Post3 for testing search
-//Title: Options Pricing
-//Description: How do we calculate option pricing?  What is the Black Scholes Model?
-//Name: Joel
