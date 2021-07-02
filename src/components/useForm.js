@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { firebase } from "@firebase/app";
+import "@firebase/auth";
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
@@ -20,8 +22,17 @@ const useForm = (callback, validate) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setErrors(validate(values));
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(values.email, values.password)
+      .then((userCredential) => {
+        var user = userCredential.user;
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
     setIsSubmitting(true);
   };
 
