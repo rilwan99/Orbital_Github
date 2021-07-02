@@ -82,7 +82,7 @@
 }
 
 .form-inputs {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   width: 80%;
 }
 
@@ -94,7 +94,7 @@
 
 .form-label {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   margin-bottom: 6px;
   color: #fff;
 }
@@ -155,5 +155,5 @@
 }
 
 :root {
-  background: rgb(41, 39, 39);
+  background: rgb(87, 80, 80);
 }

@@ -38,44 +38,53 @@ function FormSignIn() {
     <div>
       <IfFirebaseUnAuthed>
         <div className="sign-in-format">
-          <p style={{ fontSize: 20 }}>Not Logged In.</p>
-          <form>
-            <label>Enter your email:</label>
-            <input
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            ></input>
-            <br></br>
-            <label>Enter your password:</label>
-
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            ></input>
+          <form className="form">
+            <p className="signinform-header">SIGN IN</p>
+            <div className="form-inputs">
+              <label className="form-label">Email:</label>
+              <input
+                className="form-input"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="Enter your email."
+              ></input>
+            </div>
+            <div className="form-inputs">
+              <label className="form-label">Password:</label>
+              <input
+                className="form-input"
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="Enter your password."
+              ></input>
+            </div>
             <FirebaseAuthConsumer>
               {({ firebase }) => (
                 <button
                   type="submit"
-                  className=" btn-center"
+                  className="signinform-btn"
                   onClick={(event) => handleSignInViaEmail(event, firebase)}
                 >
-                  Login via email and password.
+                  Sign In With Email
+                </button>
+              )}
+            </FirebaseAuthConsumer>
+            <p style={{ color: "white", marginTop: 8 }}>
+              ----------------------------- OR -----------------------------
+            </p>
+            <FirebaseAuthConsumer>
+              {({ firebase }) => (
+                <button
+                  className="signinform-btn"
+                  type="submit"
+                  onClick={() => handleSignIn(firebase)}
+                >
+                  Sign In With Google
                 </button>
               )}
             </FirebaseAuthConsumer>
           </form>
-          ------------------------------------------------------------------
-          <FirebaseAuthConsumer>
-            {({ firebase }) => (
-              <button
-                className="form-input-btn btn-center"
-                onClick={() => handleSignIn(firebase)}
-              >
-                Sign In With Google
-              </button>
-            )}
-          </FirebaseAuthConsumer>
         </div>
       </IfFirebaseUnAuthed>
       <IfFirebaseAuthed>{() => history.push("/")}</IfFirebaseAuthed>

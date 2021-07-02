@@ -1,14 +1,17 @@
-.SignIn p {
-  font-size: 1rem;
-  text-align: start;
-  width: 80%;
-  margin-bottom: 1rem;
-  color: #fff;
+.sign-in-format {
+  margin: 100px auto;
+  width: 400px;
+
+  position: relative;
+  border-radius: 10px;
+  height: 400px;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
 }
 
-.SignIn {
-  position: absolute;
-  top: 50%;
+.form-signin {
+  position: relative;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
@@ -19,30 +22,29 @@
   align-items: center;
 }
 
-.SignIn-container {
-  margin: 100px auto;
-  width: 1000px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+.signinform-label {
   position: relative;
-  border-radius: 10px;
-  height: 600px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  justify-content: left;
+  align-items: left;
 }
 
-.sign-in-format {
-  margin: 100px auto;
-  text-align: center;
-  width: 400px;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2),
-    0 7px 20px 0 rgba(255, 255, 255, 0.2);
-  position: center;
-  border-radius: 10px;
-  height: 500px;
-  grid-template-columns: 1fr 1fr;
-  background-color: #d6d4d4;
+.signinform-header {
+  font-size: 19px;
+  text-decoration: underline;
+  text-align: left;
+  margin-top: 0px;
+  border: 0px;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
-.btn-center {
-  left: 50%;
+.signinform-btn {
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: #2aabe7;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
 }
