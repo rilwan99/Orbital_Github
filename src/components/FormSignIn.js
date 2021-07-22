@@ -12,10 +12,33 @@ import { useHistory } from "react-router-dom";
 
 function FormSignIn() {
   const history = useHistory();
-  const handleSignIn = (firebase) => {
+  const handleSignIn = (event, firebase) => {
+    event.preventDefault();
     const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(googleAuthProvider);
+    firebase
+      .auth()
+      .signInWithPopup(googleAuthProvider)
+      .then((result) => {
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
   };
+
   const handleSignInViaEmail = (event, firebase) => {
     event.preventDefault();
     firebase
@@ -77,8 +100,7 @@ function FormSignIn() {
               {({ firebase }) => (
                 <button
                   className="signinform-btn"
-                  type="submit"
-                  onClick={() => handleSignIn(firebase)}
+                  onClick={(event) => handleSignIn(event, firebase)}
                 >
                   Sign In With Google
                 </button>

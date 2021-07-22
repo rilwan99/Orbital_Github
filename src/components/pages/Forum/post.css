@@ -41,10 +41,15 @@
   width: 60%;
 }
 .postCards__item__info {
-  padding: 20px 20px 20px;
-  border-color: black;
+  padding: 10px 10px;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
   margin-left: 4%;
   margin-right: 4%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(28, 27, 27, 0.712);
 }
 
 .postCards__item__text {

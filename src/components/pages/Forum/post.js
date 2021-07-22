@@ -8,6 +8,7 @@ function Post(props) {
         <div className="postCards__item__info">
           <h5 className="postCards__item__text">{props.title}</h5>
           <p className="postCards__item__subtext">{props.text}</p>
+          <br></br>
           <p className="postCards__item__subtext">Author: {props.name}</p>
           <p className="postCards__item__subtext">
             Date and Time: {props.time}

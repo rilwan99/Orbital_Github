@@ -2,7 +2,7 @@ import React from "react";
 import validate from "./validateInfo";
 import useForm from "./useForm";
 import { Link } from "react-router-dom";
-import { firebase } from "@firebase/app";
+
 import "./Form.css";
 import { FirebaseAuthConsumer } from "@react-firebase/auth";
 
