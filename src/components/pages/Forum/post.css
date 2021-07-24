@@ -96,3 +96,25 @@
     margin-bottom: 2rem;
   }
 }
+
+.notLoggedIn-box {
+  border: white;
+  border-width: 2px;
+  color: white;
+  border-style: solid;
+  margin-left: 4%;
+  margin-right: 4%;
+  border-color: white;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.notLoggedIn-box-text {
+  color: rgb(5, 247, 255);
+  font-size: 2em;
+  text-decoration-line: none;
+  text-decoration-style: none;
+  text-decoration: none;
+}

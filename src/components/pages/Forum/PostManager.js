@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Post from "./post.js";
 import "./post.css";
 import { firebase } from "@firebase/app";
+import { IfFirebaseAuthed, IfFirebaseUnAuthed } from "@react-firebase/auth";
+import { Link } from "react-router-dom";
+import { NoEncryption } from "@material-ui/icons";
 
 function PostManager() {
   const [posts, setPosts] = useState([]);
@@ -93,44 +96,55 @@ function PostManager() {
 
   return (
     <div>
-      <div className="newPost-div">
-        Add new Post
-        <br></br>
-        <form className="formstyle" onSubmit={handleAddPost}>
-          <label className="form-header">Title:</label>
-          <input
-            className="titlebox"
-            type="text"
-            id="title"
-            value={newPostTitle}
-            onChange={(event) => setNewPostTitle(event.target.value)}
-            placeholder="Create a relevant title!"
-          ></input>
+      <IfFirebaseUnAuthed>
+        <div className="notLoggedIn-box">
+          <Link to="/sign-in" style={{ textDecoration: "none" }}>
+            <p className="notLoggedIn-box-text">
+              <u>Sign In</u> To Create Posts Now!
+            </p>
+          </Link>
+        </div>
+      </IfFirebaseUnAuthed>
+      <IfFirebaseAuthed>
+        <div className="newPost-div">
+          Add new Post
           <br></br>
-          <label className="form-header">Description:</label>
-          <br></br>
-          <input
-            className="textbox"
-            type="text"
-            id="text"
-            value={newPostText}
-            onChange={(event) => setNewPostText(event.target.value)}
-            placeholder="Write your post here."
-          ></input>
-          <br></br>
-          <label className="form-header">Name:</label>
-          <input
-            className="namebox"
-            type="text"
-            id="name"
-            value={newPostName}
-            onChange={(event) => setNewPostName(event.target.value)}
-            placeholder="Write your name here."
-          ></input>
-          <br></br>
-          <input type="submit" value="Add" />
-        </form>
-      </div>
+          <form className="formstyle" onSubmit={handleAddPost}>
+            <label className="form-header">Title:</label>
+            <input
+              className="titlebox"
+              type="text"
+              id="title"
+              value={newPostTitle}
+              onChange={(event) => setNewPostTitle(event.target.value)}
+              placeholder="Create a relevant title!"
+            ></input>
+            <br></br>
+            <label className="form-header">Description:</label>
+            <br></br>
+            <input
+              className="textbox"
+              type="text"
+              id="text"
+              value={newPostText}
+              onChange={(event) => setNewPostText(event.target.value)}
+              placeholder="Write your post here."
+            ></input>
+            <br></br>
+            <label className="form-header">Name:</label>
+            <input
+              className="namebox"
+              type="text"
+              id="name"
+              value={newPostName}
+              onChange={(event) => setNewPostName(event.target.value)}
+              placeholder="Write your name here."
+            ></input>
+            <br></br>
+            <input type="submit" value="Add" />
+          </form>
+        </div>
+      </IfFirebaseAuthed>
 
       <div>
         {posts.map((post) => (
