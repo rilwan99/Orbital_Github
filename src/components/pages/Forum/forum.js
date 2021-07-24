@@ -42,6 +42,7 @@ function Forum() {
           community will be happy to answer your questions.
         </p>
       </div>
+      <Search />
       <div>
         {loadedPosts.map((post) => (
           <Post
@@ -52,7 +53,6 @@ function Forum() {
           />
         ))}
       </div>
-      <Search />
       <PostManager />
       <Footer />
     </>
