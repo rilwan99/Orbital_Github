@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { firebase } from "@firebase/app";
 import Post from "../Forum/post";
 import "./post.css";
+import { render } from "@testing-library/react";
 
 function Search() {
   const [query, setQuery] = useState("");
   const [posts, setPosts] = useState([]);
   const db = firebase.firestore();
+  const [queryResult, setQueryResult] = useState("postsFound");
 
   //preventDefault --> Receive the query from user --> Load result from database --> render the new results
   const handleInputChange = (event) => {
@@ -46,6 +48,7 @@ function Search() {
         if (querySnapshot.empty) {
           console.log("Query:", query);
           console.log("No results");
+          setQueryResult("postsNotFound");
           return <p>No results found.</p>;
         }
         querySnapshot.forEach((doc) => {
@@ -53,6 +56,7 @@ function Search() {
           posts.push(doc.data());
           setPosts(posts);
           console.log(posts);
+          setQueryResult("postsFound");
         });
       });
 
@@ -68,6 +72,12 @@ function Search() {
 
   return (
     <>
+      {queryResult === "postsNotFound" && (
+        <p className="search-empty">
+          We couldn't find any posts. Try searching for something else?
+        </p>
+      )}
+
       <form className="search-form">
         <label className="search-label">
           Search:
@@ -84,6 +94,7 @@ function Search() {
           </button>
         </label>
       </form>
+
       <div>
         {posts.map((post) => (
           <Post
