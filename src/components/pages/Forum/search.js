@@ -20,18 +20,20 @@ function Search() {
   const handleQuery = (event) => {
     event.preventDefault();
     loadData();
-    renderPosts();
+    //renderPosts();
   };
 
+  /*
   useEffect(() => {
     loadData();
   }, []);
-
+*/
+  /*
   useEffect(() => {
     renderPosts();
     console.log("UseEffect-renderposts is called");
   }, []);
-
+*/
   //This sometimes works, and sometimes does not work.
   //No idea why, but perhaps due to asynchronous programming.
 
@@ -46,8 +48,6 @@ function Search() {
       .then((querySnapshot) => {
         console.log("checking database...");
         if (querySnapshot.empty) {
-          console.log("Query:", query);
-          console.log("No results");
           setQueryResult("postsNotFound");
           return <p>No results found.</p>;
         }
@@ -55,23 +55,21 @@ function Search() {
           console.log(doc.id, " => ", doc.data());
           posts.push(doc.data());
           setPosts(posts);
-          console.log(posts);
           setQueryResult("postsFound");
         });
       });
-
-    renderPosts();
+    console.log(queryResult);
   };
 
   //suspect sth wrong here
   /*TODO */
+  /*
   const renderPosts = () => {
     console.log("Helloworld RENDERING");
     console.log(posts);
-  };
-
+  };*/
   return (
-    <>
+    <div style={{ marginTop: "20px" }}>
       {queryResult === "postsNotFound" && (
         <p className="search-empty">
           We couldn't find any posts. Try searching for something else?
@@ -105,7 +103,7 @@ function Search() {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
